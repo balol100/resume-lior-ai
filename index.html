@@ -548,13 +548,13 @@
 
   /* Toast */
   .toast{
-    position:fixed;bottom:24px;left:50%;transform:translateX(-50%) translateY(120%);
+    position:fixed;opacity:0;bottom:24px;left:50%;transform:translateX(-50%) translateY(120%);
     background:#0f172a;color:#fff;padding:12px 20px;border-radius:100px;
     font-size:14px;font-weight:600;box-shadow:0 12px 30px -8px rgba(0,0,0,.4);
     transition:transform .3s cubic-bezier(.34,1.56,.64,1);z-index:10000;
     display:flex;align-items:center;gap:8px;
   }
-  .toast.show{transform:translateX(-50%) translateY(0)}
+  .toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
   .toast.success{background:#065f46}
   .toast.error{background:#991b1b}
 
