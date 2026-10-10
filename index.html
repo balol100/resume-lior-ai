@@ -171,7 +171,7 @@
     --bg:#f4f5f9;
     --panel:#ffffff;
     --ink:#0f172a;
-    --muted:#64748b;
+    --muted:#475569;
     --line:#e2e8f0;
     --line-strong:#cbd5e1;
     --brand:#4f46e5;
@@ -583,6 +583,11 @@
     *{animation-duration:.01ms!important;transition-duration:.01ms!important}
   }
 </style>
+<style id="a11y-wave2">/* נגישות (ת״י 5568 / WCAG 2.0 AA): דילוג לתוכן + פוקוס נראה */
+.skip-link{position:absolute;top:-200px;right:8px;z-index:2147483647;background:#111;color:#fff;padding:12px 18px;border-radius:8px;font-weight:700;text-decoration:none}
+.skip-link:focus{top:8px;outline:3px solid #ffbf47;outline-offset:2px}
+a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible,summary:focus-visible,[tabindex]:focus-visible{outline:3px solid #ffbf47;outline-offset:2px;box-shadow:0 0 0 6px #111}
+</style>
 </head>
 <body>
 
@@ -917,7 +922,7 @@
         <div class="grid-2">
           <div class="field"><label>שפה</label><input data-lang="name" data-i="${i}" value="${esc(x.name)}" placeholder="עברית"></div>
           <div class="field"><label>רמה</label>
-            <select data-lang="level" data-i="${i}">
+            <select aria-label="רמה" data-lang="level" data-i="${i}">
               ${['שפת אם','שוטפת','טובה מאוד','טובה','בסיסית'].map(l =>
                 `<option${l === x.level ? ' selected' : ''}>${l}</option>`).join('')}
             </select>
